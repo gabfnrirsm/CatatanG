@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Catatan</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Tambahan CSS khusus buat tab */
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+    .tab-button {
+      padding: 10px 20px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .tab-button.active {
+      background: #00aaff;
+    }
+    .catatan-section {
+      display: none;
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      width: 500px;
+      margin: 0 auto;
+      color: #eee;
+      box-shadow: 0 0 15px #000;
+    }
+    .catatan-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center; color:#00aaff;">Catatan</h1>
+
+  <div class="tabs">
+    <button class="tab-button active" data-target="password">Password email</button>
+    <button class="tab-button" data-target="musik">Catatan Musik</button>
+    <button class="tab-button" data-target="lainnya">Catatan Lainnya</button>
+  </div>
+
+  <div id="password" class="catatan-section active">
+    <h2>Password Email</h2>
+    <ul>
+      <li>gabriellopinem550@gmail.com = pibertapinem123</li>
+      <li>Rendang</li>
+      <li>Es Teh Manis</li>
+      <li>Pisang Goreng</li>
+    </ul>
+    <h2>Password Lainnya</h2>
+    <ul>
+      <li>gabriellopinem550@gmail.com = pibertapinem123</li>
+      <li>Rendang</li>
+      <li>Es Teh Manis</li>
+      <li>Pisang Goreng</li>
+    </ul>
+  </div>
+
+  <div id="musik" class="catatan-section">
+    <h2>Musik Favorit</h2>
+    <ul>
+      <li>Jazz</li>
+      <li>Rock</li>
+      <li>Lo-Fi Chill</li>
+      <li>Pop Indonesia</li>
+    </ul>
+  </div>
+
+  <div id="lainnya" class="catatan-section">
+    <h2>Catatan Lainnya</h2>
+    <p>Bisa kamu isi dengan hal-hal lain yang ingin dicatat.</p>
+  </div>
+
+  <script>
+    // JavaScript untuk pindah tab
+    const buttons = document.querySelectorAll('.tab-button');
+    const sections = document.querySelectorAll('.catatan-section');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Hapus active dari semua tombol & section
+        buttons.forEach(b => b.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+
+        // Tambah active ke tombol yang dipilih
+        btn.classList.add('active');
+
+        // Tampilkan section sesuai data-target tombol
+        const target = btn.getAttribute('data-target');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

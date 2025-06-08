@@ -1,0 +1,76 @@
+/* Pastikan body dan konten center dan column */
+body {
+  font-family: sans-serif;
+  background: #121212;
+  color: #eee;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Judul utama */
+h1 {
+  color: #00aaff;
+  margin-bottom: 20px;
+}
+
+/* Tabs tombol */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* kalau kecil layar tombol bisa turun */
+}
+
+/* Tombol */
+.tab-button {
+  padding: 10px 20px;
+  background: #004080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+.tab-button.active {
+  background: #00aaff;
+}
+
+.tab-button:hover {
+  background: #0059b3;
+}
+
+/* Konten catatan */
+.catatan-section {
+  display: none;
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;  /* batas lebar maksimal */
+  box-sizing: border-box;
+  box-shadow: 0 0 15px #000;
+  color: #eee;
+  text-align: left;
+}
+
+.catatan-section.active {
+  display: block;
+}
+
+/* List catatan */
+.catatan-section ul {
+  list-style-type: disc;
+  padding-left: 20px; /* indentasi list */
+  margin-top: 10px;
+}
+
+.catatan-section li {
+  margin-bottom: 8px;
+}
